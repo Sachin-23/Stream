@@ -1,0 +1,9 @@
+<%- include ('header'); -%>
+
+<ul>
+  <% for (var file of Object.keys(files))  { %> 
+      <li> <a href="<% if (!files[file]) { %>/play/<% } else { %>/<% } %><%= file %>"><%= file %></a></li>
+  <% } %>
+</ul>
+
+<%- include ('footer'); -%>
