@@ -11,3 +11,6 @@ use `ip addr` or `ifconfig` to know your local ip.
 ### Note: 
 > Use chrome for better experience.
 
+## Credits:
+
+[video-stream-sample](https://github.com/daspinola/video-stream-sample)
