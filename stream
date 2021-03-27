@@ -80,6 +80,19 @@ app.get("/stream/:name", function(req, res)  {
 });
 
 app.listen(PORT, () => {
-    console.log("go to -> " + "http:\\\\" + networkInterfaces["enp2s0"][0]["address"] + ":" + PORT);
+    try {
+        let device = "";
+        if (networkInterfaces["wlo1"]) {
+          device = "wlo1";
+        }
+        else if (networkInterfaces["enp2s0"]) {
+          device = "enp2s0";
+        }
+        console.log("go to -> " + "http:\\\\" + networkInterfaces[device][0]["address"] + ":" + PORT);
+    }
+    catch {
+      console.error("Error could not find any network device. Please try changing network device above.");
+      process.exit(1);
+    }
   });
 
